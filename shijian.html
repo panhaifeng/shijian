@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>131</title>
+	<script language="javascript" src="jquery.js"></script>
+	
+	<style type="text/css">
+		.aa {
+	font-size:30px;
+}
+.timespan,.timespan1,.timespan2,.time,.time1,.time2,.time3,.tim,.ti {
+	color:red;
+	font-size:30px;
+}
+	</style>
+	<script type="text/javascript">
+		var date = new Date();
+var yy = date.getFullYear();
+var MM = date.getMonth() + 1;
+var dd = date.getDate();
+var starttime = new Date(yy + "/" + MM + "/" + dd + " " + "17:30:00");
+setInterval(function() {
+    var nowtime = new Date();
+    var time = starttime - nowtime;
+    var hour = parseInt(time / 1000 / 60 / 60 % 24);
+    var minute = parseInt(time / 1000 / 60 % 60);
+    var seconds = parseInt(time / 1000 % 60);
+    if (hour < 1 && minute < 5) {
+        $('.timespan').eq(3).html("再忍一下！加油！");
+    }
+    if (seconds < 0) {
+        $(".span0").hide();
+        $('.timespan').eq(3).html("混吃混喝又一天");
+    } else {
+        $('.timespan').eq(0).html(hour);
+        $('.timespan').eq(1).html(minute);
+        $('.timespan').eq(2).html(seconds);
+    }
+}, 1000);
+var starttimes = new Date("2054/11/29 17:30:00");
+setInterval(function() {
+    var nowtime = new Date();
+    //设置时间-当前时间=倒计时时间
+    var times = starttimes - nowtime;
+    var yy = parseInt(times / 1000 / 60 / 60 / 24 / 30 / 12);
+    var mm = parseInt(times / 1000 / 60 / 60 / 24 / 30 % 12);
+    var dates = parseInt(times / 1000 / 60 / 60 / 24 % 31);
+    var hour = parseInt(times / 1000 / 60 / 60 % 24);
+    var minute = parseInt(times / 1000 / 60 % 60);
+    var seconds = parseInt(times / 1000 % 60);
+    if (seconds < 0) {
+        $('.time').html("恭喜你可以退休了");
+    } else {
+        $('.time').eq(0).html(yy);
+        $('.time').eq(1).html(mm);
+        $('.time').eq(2).html(dates);
+        $('.time').eq(3).html(hour);
+        $('.time').eq(4).html(minute);
+        $('.time').eq(5).html(seconds);
+    }
+}, 1000);
+	</script>
+</head>
+<body>
+<span class="aa">人生旅途表</span><br>
+    <br>
+    <br>
+    <span class="aa">今日下班倒计时</span><br>
+    <span class="timespan"></span><span class="span0">时</span>
+    <span class="timespan"></span><span class="span0">分</span>
+    <span class="timespan"></span><span class="span0">秒<br></span>
+    <span class="timespan"></span><br>
+    <br>
+    <span class="aa">距离退休还剩</span><br>
+    <br>
+    <span class="time"></span>年
+    <span class="time"></span>月
+    <span class="time"></span>天
+    <span class="time"></span>时
+    <span class="time"></span>分
+    <span class="time"></span>秒
+</body>
+</html>
