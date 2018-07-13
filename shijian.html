@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-	<title>131</title>
+	<title>时间表</title>
 	<script language="javascript" src="jquery.js"></script>
 	
 	<style type="text/css">
 		.aa {
 	font-size:30px;
 }
-.timespan,.timespan1,.timespan2,.time,.time1,.time2,.time3,.tim,.ti {
+.timespan,.timespan1,.timespan2,.time,.time1,.time2,.time3,.tim,.ti,.time_work {
 	color:red;
 	font-size:30px;
 }
@@ -60,6 +60,28 @@ setInterval(function() {
         $('.time').eq(5).html(seconds);
     }
 }, 1000);
+var starttimeWork = new Date("2017/08/14 08:30:00");
+setInterval(function() {
+    var nowtime = new Date();
+    //设置时间-当前时间=倒计时时间
+    var timesw = nowtime-starttimeWork;
+    var yy = parseInt(timesw / 1000 / 60 / 60 / 24 / 30 / 12);
+    var mm = parseInt(timesw / 1000 / 60 / 60 / 24 / 30 % 12);
+    var dates = parseInt(timesw / 1000 / 60 / 60 / 24 % 31);
+    var hour = parseInt(timesw / 1000 / 60 / 60 % 24);
+    var minute = parseInt(timesw / 1000 / 60 % 60);
+    var seconds = parseInt(timesw / 1000 % 60);
+    if (seconds < 0) {
+        $('.time_work').html("恭喜你可以退休了");
+    } else {
+        $('.time_work').eq(0).html(yy);
+        $('.time_work').eq(1).html(mm);
+        $('.time_work').eq(2).html(dates);
+        $('.time_work').eq(3).html(hour);
+        $('.time_work').eq(4).html(minute);
+        $('.time_work').eq(5).html(seconds);
+    }
+}, 1000);
 	</script>
 </head>
 <body>
@@ -80,5 +102,16 @@ setInterval(function() {
     <span class="time"></span>时
     <span class="time"></span>分
     <span class="time"></span>秒
+    <span class="time"></span><br>
+    <br>
+    <span class="aa">从事计算机行业</span><br>
+    <br>
+    <span class="time_work"></span>年
+    <span class="time_work"></span>月
+    <span class="time_work"></span>天
+    <span class="time_work"></span>时
+    <span class="time_work"></span>分
+    <span class="time_work"></span>秒
+
 </body>
 </html>
