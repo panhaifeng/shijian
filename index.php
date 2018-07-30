@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**看
  * 
  */
 $wechatObj = new Index();
