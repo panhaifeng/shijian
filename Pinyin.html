@@ -3,14 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>拼音</title>
+	<script type="text/javascript">
+		function myCheck(){
+			var content = document.getElementById('content').value;
+			if(content==''){
+				alert('请填写中文字符！');
+		        return false;
+			}
+		}
+	</script>
 </head>
 <body>
 
-<form action="GetPinyin.php" method="post">
+<form action="GetPinyin.php" method="post" onSubmit="return myCheck(this)">
 	<div>
-		<input type="text" name="content" id="content" placeholder="请填写需要转换为拼音的中文" value="">
+		<input type="text" name="content" id="content" placeholder="请填写需要转换为拼音的中文" />
 	</div>
-<div><input type="submit"  value="提交" name="submit" /></div>
+<div style="margin-top: 10px"><input type="submit"  value="提交" name="submit" /></div>
 </form>
 </body>
 </html>

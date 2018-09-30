@@ -8,12 +8,12 @@ require('vendor/autoload.php');
   	public function index(){
       //echo $_POST;die;
   		 $string = $_POST['content'];
-         $Pingyin = new \Overtrue\Pinyin\Pinyin();
-		 $abbr = $Pingyin->convert($string);
-		 $abbr = implode(' ', $abbr);
+       $Pingyin = new \Overtrue\Pinyin\Pinyin();
+		   $abbr = $Pingyin->convert($string);
+		   $abbr = implode(' ', $abbr);
 		 //$abbr = strtoupper($abbr);
 		 //print_r($abbr);die;
-		 echo $string.'拼音是:'.$abbr;    
+		   echo $string.'拼音是:'.$abbr;    
   	}
   }
 
