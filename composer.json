@@ -1,0 +1,14 @@
+{
+    "name": "php/composer",
+    "description": "test composer",
+    "type": "libaray",
+    "authors": [
+        {
+            "name": "panhaifeng",
+            "email": "613554008@qq.com"
+        }
+    ],
+    "require": {
+        "overtrue/pinyin": "~3.0"
+    }
+}
